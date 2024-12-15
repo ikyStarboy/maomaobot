@@ -1,4 +1,4 @@
-![maomao](https://pin.it/22VkF1JlB) 
+![maomao](https://raw.githubusercontent.com/ikyStarboy/ReinaCmd/refs/heads/main/Maomao%F0%9F%91%89%F0%9F%8F%BB%F0%9F%92%97%F0%9F%91%88%F0%9F%8F%BB.jpeg) 
 
 <h1 align="center">𝗠𝗮𝗼𝗺𝗮𝗼 𝗻𝗼 𝗞𝗼𝗸𝘆𝘂 𝗡𝗮𝘇𝗼𝘁𝗼𝗸𝗶 𝗧𝗲𝗰𝗵𝗼 ♡</h1>
 
