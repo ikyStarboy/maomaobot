@@ -1,13 +1,13 @@
 ![maomao](https://raw.githubusercontent.com/ikyStarboy/ReinaCmd/refs/heads/main/e277038f-a5cc-4e55-8f12-20063b1b12d8.jpeg) 
 
-<h1 align="center">𝗜𝗧𝗦𝗨𝗞𝗜 𝗡𝗔𝗞𝗔𝗡𝗢 ♡</h1>
+<h1 align="center">𝗠𝗮𝗼𝗺𝗮𝗼 𝗻𝗼 𝗞𝗼𝗸𝘆𝘂 𝗡𝗮𝘇𝗼𝘁𝗼𝗸𝗶 𝗧𝗲𝗰𝗵𝗼 ♡</h1>
 
-• Itsuki nakano ai chatbot messenger by hady zen and saveng. <br />
+• 𝗠𝗮𝗼𝗺𝗮𝗼 𝗻𝗼 𝗞𝗼𝗸𝘆𝘂 𝗡𝗮𝘇𝗼𝘁𝗼𝗸𝗶 𝗧𝗲𝗰𝗵𝗼 ai chatbot messenger by hady zen and saveng edit by iky. <br />
 
 ## 𝗕𝗢𝗧 ♡
 
-• Nama: 𝖨𝗍𝗌𝗎𝗄𝗂 𝗇𝖺𝗄𝖺𝗇𝗈 <br />
-• Awalan: itsuki <br />
+• Nama: Maomao no Kōkyū Nazotoki Techō <br />
+• Awalan: maomao <br />
 • Language: 𝗇𝗈𝖽𝖾𝗃𝗌, 𝖻𝖺𝗌𝗁, js <br />
 
 ## 𝗔𝗗𝗠𝗜𝗡 ♡
@@ -30,5 +30,5 @@
 • open file akun.text paste your cookie <br />
 • npm start 
 
-# Itsuki nakano ♡# Maomao
+# 𝗠𝗮𝗼𝗺𝗮𝗼 ♡# Maomao
 # Maomao
