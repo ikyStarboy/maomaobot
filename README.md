@@ -29,7 +29,7 @@
 **• create new project 
 • import**
 ```bash
-https://github.com/ikyStarboy/maomaobot
+https://github.com/ikyStarboy/maomaobot.git
 ```
 **or open terminal write:** 
 ```bash
