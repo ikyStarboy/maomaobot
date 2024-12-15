@@ -30,7 +30,7 @@
 • import https://github.com/ikyStarboy/maomaobot or open terminal write: 
 ```bash
 git clone https://github.com/ikyStarboy/maomaobot.git
-...
+```
 • npm install <br />
 • download: <br />
 • import cookie editor to kiwi extensions <br />
