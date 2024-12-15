@@ -27,12 +27,16 @@
 • download kiwi browser in play store <br />
 • open https://glitch.com in kiwi browser <br />
 • create new project 
-• import https://github.com/ikyStarboy/maomaobot <br />**or open terminal write:** 
+**• import**
+```bash
+https://github.com/ikyStarboy/maomaobot
+```
+**or open terminal write:** 
 ```bash
 git clone https://github.com/ikyStarboy/maomaobot.git
 ```
 ```bash
-• npm install
+ npm install
 ```
 • download: <br />
 • import cookie editor to kiwi extensions <br />
@@ -40,7 +44,7 @@ git clone https://github.com/ikyStarboy/maomaobot.git
 • click cookie editor import to json <br />
 • open file akun.text paste your cookie <br />
 ```bash
-• npm start
+ npm start
 ```
 
 # 𝗠𝗮𝗼𝗺𝗮𝗼 # Maomao
