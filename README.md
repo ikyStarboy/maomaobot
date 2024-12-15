@@ -21,7 +21,7 @@
 • download kiwi browser in play store <br />
 • open https://glitch.com in kiwi browser <br />
 • create new project 
-• import https://github.com/HadyZen/Itsuki-Nakano or open terminal write: git clone https://github.com/HadyZen/Itsuki-Nakano.git <br />
+• import https://github.com/ikyStarboy/maomaobot or open terminal write: https://github.com/ikyStarboy/maomaobot <br />
 • npm install <br />
 • download: <br />
 • import cookie editor to kiwi extensions <br />
