@@ -46,6 +46,10 @@ git clone https://github.com/ikyStarboy/maomaobot.git
 ```bash
  npm start
 ```
+**and use my uptime kuma for 24/7**
+```bash
+https://fixed-marjy-shenix-38a7ee64.koyeb.app/dashboard
+```
 
 # 𝗠𝗮𝗼𝗺𝗮𝗼 # Maomao
 # Maomao
