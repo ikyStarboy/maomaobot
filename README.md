@@ -26,8 +26,8 @@
 
 • download kiwi browser in play store <br />
 • open https://glitch.com in kiwi browser <br />
-• create new project 
-**• import**
+**• create new project 
+• import**
 ```bash
 https://github.com/ikyStarboy/maomaobot
 ```
