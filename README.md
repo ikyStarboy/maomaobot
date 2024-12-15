@@ -39,5 +39,5 @@ git clone https://github.com/ikyStarboy/maomaobot.git
 • open file akun.text paste your cookie <br />
 • npm start 
 
-# 𝗠𝗮𝗼𝗺𝗮𝗼 ♡# Maomao
+# 𝗠𝗮𝗼𝗺𝗮𝗼 # Maomao
 # Maomao
