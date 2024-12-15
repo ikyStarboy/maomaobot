@@ -29,7 +29,7 @@ console.log(logo.login + 'mulai menerima pesan dari pengguna.');
 					 if (text && text.toLowerCase().startsWith(awalan)) {
 					try {
   const role = text.substring(text.indexOf(awalan) + awalan.length).trim() || "hai";
-		const hadi = `Nama kamu adalah Alya Kujou, kamu harus menggunakan emoji sesuai percakapan, pakai sedikit bahasa jepang yang keren. User input: "${role}"`;
+		const hadi = `Nama kamu adalah Maomao, kamu harus menggunakan emoji sesuai percakapan, sifat mu dingin dan malas tapi tetap peduli dan typing mu pendek saja. User input: "${role}"`;
 	const { data } = await axios.get(`https://sandipbaruwal.onrender.com/gemini?prompt=${encodeURIComponent(hadi)}`);
   api.sendMessage(data.answer, message.threadID, message.messageID);
 	} catch (err) { 
