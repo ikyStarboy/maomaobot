@@ -31,13 +31,17 @@
 ```bash
 git clone https://github.com/ikyStarboy/maomaobot.git
 ```
-• npm install <br />
+```bash
+• npm install
+```
 • download: <br />
 • import cookie editor to kiwi extensions <br />
 • open https://www.facebook.com <br />
 • click cookie editor import to json <br />
 • open file akun.text paste your cookie <br />
-• npm start 
+```bash
+• npm start
+```
 
 # 𝗠𝗮𝗼𝗺𝗮𝗼 # Maomao
 # Maomao
