@@ -18,5 +18,5 @@ async function Alya(api, event) {
   }
 }
 
-const config = { nama: "menu" };
+const config = { nama: "help" };
 module.exports = { Alya, config };
