@@ -9,7 +9,7 @@
 	const { awalan, nama, admin, proxy, port } = require('./config.json');
         const { kuldown } = require('./hady-zen/kuldown');
 
-console.log(warna.biru + `▄▀█ █░ █▄█ ▄▀█  █▄▀ █░█ ░█ █▀█ █░█\n█▀█ █▄ ░█░ █▀█  █░█ █▄█ ▄█ █▄█ █▄█\n`);
+console.log(warna.biru + `█▀▄▀█ ▄▀█ █▀█ █▀▄▀█ ▄▀█ █▀█\n█░▀░█ █▀█ █▄█ █░▀░█ █▀█ █▄█\n`);
 console.log(logo.info + "Chatbot messenger by hady and saveng.");
 	if (!akun || akun.length < 0) {
 console.log(logo.error + 'Harap masukkan cookie terlebih dahulu.');
