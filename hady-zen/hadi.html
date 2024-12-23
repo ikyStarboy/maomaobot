@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+  <title>Alya AI</title>
+  <style>
+    body {
+      background-image: url("https://raw.githubusercontent.com/HadyZen/hady-zen-api/refs/heads/main/anime/wallpaper.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+        }
+     #tabel {
+      background-color: #30475e;
+      padding: 20px;
+      margin: 10px auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      color: white;
+    }
+        section.anime-list {
+            display: flex;
+            gap: 8px;
+            padding: 8px;
+            background-color: #242424; /* Dark section background */
+        }
+
+.btn {
+  padding: 10px 20px;
+            font-size: 16px;
+            background-color: #333; 
+            color: #fff;
+            border: none;
+            min-width: 93px;
+            min-height: 30px;
+}
+
+.active {
+  background-color: #666; 
+}
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 5px;
+        }
+         .keren {
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      animation: move 4s infinite;
+      text-shadow: 0 0 10px white, 0 0 30px white, 0 0 20px white;
+    }
+    video {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+           .button {
+      background-color: #0899;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      animation: fadeIn 4s;
+      margin: 10px;
+      min-width: 90px;
+      min-height: 36px;
+      font-size: 20px;
+      font-weight: bold; 
+    }
+        .app-header {
+      background-color: #242418;
+      color: #fff;
+      padding: 1px;
+      text-align: center;
+      }
+        @keyframes move {
+      0%, 100% {
+        transform: translateY(0);
+      }
+50% {
+        transform: translateY(-10px);
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <h2 class="keren">Alya Kujou</h2>
+    </header>
+    <section class="anime-list">
+      <button class="btn" onclick="showContent('home')">Home</button>
+      <button class="btn" onclick="showContent('info')">Info</button>
+      <button class="btn" onclick="showContent('kontak')">Kontak</button>
+      <button class="btn" onclick="showContent('random')">Random</button>
+    </section>
+    <main id="content">
+      <div id="home" class="content-section">
+
+      </div>
+      <div id="info" class="content-section">
+<div id="tabel">
+    <h2>𝗕𝗢𝗧 ♡</h2>
+  <p>Uptime: <span id="uptime"></span><br />
+Webview: <button class="tombol" onclick="copyLocation()">Salin</button></p>
+</div>
+<div id="tabel">
+    <h2>𝗧𝗘𝗦 ♡</h2>
+  <p>pepek</p>
+</div>
+      </div>
+      <div id="kontak" class="content-section">
+      </div>
+      <div id="random" class="content-section">
+<video id="video" controls>
+  <source src="https://raw.githubusercontent.com/HadyZen/hady-zen-api/refs/heads/main/anime/status.mp4" type="video/mp4">
+</video>
+      </div>
+    </main>
+    <script>
+      const buttons = document.querySelectorAll('.btn');
+      function showContent(id) {
+        const contentSections = document.querySelectorAll('.content-section');
+        contentSections.forEach(section => {
+          section.style.display = 'none';
+        });
+        document.getElementById(id).style.display = 'block';
+      }
+      showContent('home');
+
+      let wle = Date.now();
+      function WaktuAktif() {
+        let elapsedTime = Date.now() - wle;
+
+        let jam = Math.floor(elapsedTime / 3600000);
+        let menit = Math.floor((elapsedTime % 3600000) / 60000);
+        let detik = Math.floor((elapsedTime % 60000) / 1000);
+
+        jam = jam < 10 ? "0" + jam: jam;
+        menit = menit < 10 ? "0" + menit: menit;
+        detik = detik < 10 ? "0" + detik: detik;
+
+        document.getElementById("uptime").textContent = jam + ":" + menit + ":" + detik;
+      }
+      setInterval(WaktuAktif, 1000);
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Hapus kelas 'active' dari semua tombol
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // Tambahkan kelas 'active' ke tombol yang baru diklik
+    button.classList.add('active');
+  });
+});
+function copyLocation() {
+  // Create a temporary input element
+  const tempInput = document.createElement('input');
+  tempInput.value = window.location.href;
+  document.body.appendChild(tempInput);
+
+  // Select the input text
+  tempInput.select();
+  document.execCommand('copy');
+
+  // Remove the temporary input element
+  document.body.removeChild(tempInput);
+}
+
+    </script>
+  </body>
+</html>
