@@ -2,7 +2,9 @@ const fs = require('fs');
 const path = require('path');
 
 const databasePath = path.resolve(__dirname, 'balanceDatabase.json');
+const fakeUidDatabasePath = path.resolve(__dirname, 'fakeUidDatabase.json');
 
+// Membaca database pengguna
 function readDatabase() {
   if (!fs.existsSync(databasePath)) {
     fs.writeFileSync(databasePath, JSON.stringify([]));
@@ -11,34 +13,63 @@ function readDatabase() {
   return JSON.parse(data);
 }
 
+// Menulis ke database pengguna
 function writeDatabase(data) {
   fs.writeFileSync(databasePath, JSON.stringify(data, null, 2));
 }
 
+// Membaca database fakeUid
+function readFakeUidDatabase() {
+  if (!fs.existsSync(fakeUidDatabasePath)) {
+    fs.writeFileSync(fakeUidDatabasePath, JSON.stringify({ nextUid: 1, users: {} }));
+  }
+  const data = fs.readFileSync(fakeUidDatabasePath, 'utf-8');
+  return JSON.parse(data);
+}
+
+// Menulis ke database fakeUid
+function writeFakeUidDatabase(data) {
+  fs.writeFileSync(fakeUidDatabasePath, JSON.stringify(data, null, 2));
+}
+
+// Menjamin bahwa user dengan UID asli telah ada, dan jika belum, buat data baru
 function ensureUser(uid) {
+  const fakeUidDatabase = readFakeUidDatabase();
+  let fakeUid = fakeUidDatabase.users[uid]?.fakeUid;
+
+  if (!fakeUid) {
+    fakeUid = fakeUidDatabase.nextUid;
+    fakeUidDatabase.users[uid] = { fakeUid, name: "unknown" };
+    fakeUidDatabase.nextUid += 1;
+    writeFakeUidDatabase(fakeUidDatabase);
+  }
+
   const database = readDatabase();
-  let user = database.find((u) => u.uid === uid);
+  let user = database.find((u) => u.fakeUid === fakeUid);
 
   if (!user) {
-    user = { uid, balance: 5 };
+    user = { fakeUid, balance: 5 };
     database.push(user);
     writeDatabase(database);
   }
+
   return user;
 }
 
-function transferBalance(senderID, receiverID, amount) {
+// Transfer balance antar pengguna menggunakan fakeUid
+function transferBalance(senderID, receiverFakeUid, amount) {
   const database = readDatabase();
   const sender = ensureUser(senderID);
-  const receiver = ensureUser(receiverID);
+  const receiver = database.find((u) => u.fakeUid === receiverFakeUid);
 
+  if (!receiver) return false;
   if (sender.balance < amount) return false;
 
   sender.balance -= amount;
   receiver.balance += amount;
 
-  const senderIndex = database.findIndex((u) => u.uid === senderID);
-  const receiverIndex = database.findIndex((u) => u.uid === receiverID);
+  const senderIndex = database.findIndex((u) => u.fakeUid === sender.fakeUid);
+  const receiverIndex = database.findIndex((u) => u.fakeUid === receiver.fakeUid);
 
   database[senderIndex] = sender;
   database[receiverIndex] = receiver;
@@ -53,26 +84,26 @@ module.exports = {
     penulis: "iky",
     kuldown: 10,
     peran: 0,
-    tutor: "pay <uid penerima> <nominal>",
+    tutor: "pay <fakeUid penerima> <nominal>",
   },
   Alya: async function (api, event, args) {
     const senderID = event.senderID;
-    const receiverID = args[0];
+    const receiverFakeUid = parseInt(args[0], 10);  // Menggunakan fakeUid sebagai parameter
     const amount = parseInt(args[1], 10);
 
-    if (!receiverID || isNaN(amount) || amount <= 0) {
+    if (!receiverFakeUid || isNaN(amount) || amount <= 0) {
       return api.sendMessage(
-        "salah brader harus nya gini: pay <uid penerima> <nominal>",
+        "Format salah! Harusnya seperti ini: pay <fakeUid penerima> <nominal>",
         event.threadID,
         event.messageID
       );
     }
 
-    if (receiverID === senderID) {
+    if (receiverFakeUid === ensureUser(senderID).fakeUid) {
       return api.sendMessage("Kamu tidak bisa mengirim balance ke diri sendiri.", event.threadID, event.messageID);
     }
 
-    const success = transferBalance(senderID, receiverID, amount);
+    const success = transferBalance(senderID, receiverFakeUid, amount);
     if (success) {
       return api.sendMessage(
         `Berhasil mengirim ${amount}€`,
@@ -81,7 +112,7 @@ module.exports = {
       );
     } else {
       return api.sendMessage(
-        "euro kamu tidak cukup untuk melakukan transfer.",
+        "Saldo kamu tidak cukup untuk melakukan transfer.",
         event.threadID,
         event.messageID
       );

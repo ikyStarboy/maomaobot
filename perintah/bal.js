@@ -30,7 +30,7 @@ function ensureUser(uid) {
 module.exports = {
   config: {
     nama: "balance",
-    penulis: "Hady Zen",
+    penulis: "iky",
     kuldown: 10,
     peran: 0,
     tutor: "<penggunaan command>",

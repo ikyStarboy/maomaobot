@@ -1,0 +1,17 @@
+{
+  "nextUid": 4,
+  "users": {
+    "100073751001989": {
+      "fakeUid": 1,
+      "name": "unknown"
+    },
+    "100090011120944": {
+      "fakeUid": 2,
+      "name": "unknown"
+    },
+    "100088085177610": {
+      "fakeUid": 3,
+      "name": "unknown"
+    }
+  }
+}
